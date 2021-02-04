@@ -10,6 +10,7 @@ export class AppComponent implements OnInit {
   title = 'Sample';
   categories =[];
   categoryItems = [];
+  display: boolean = false;
 
   ngOnInit(): void {
     this.categories = [
@@ -39,6 +40,10 @@ export class AppComponent implements OnInit {
 
   onCategorySelect(itemIndex) {
     this.categoryItems = this.categories[itemIndex].items;
+  }
+
+  showDialog() {
+    this.display = true;
   }
 
 }

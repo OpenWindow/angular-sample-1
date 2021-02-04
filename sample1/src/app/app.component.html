@@ -1,12 +1,18 @@
-<div id="outer" class="w-full flex items-stretch">
-  <div id="category" class="w-1/4" style="border: red 1px solid;">
-    <div *ngFor="let item of categories; let i = index" class="py-4 pl-4" (click)="onCategorySelect(i)">
-      {{ item.name }}
+
+<p-dialog header="Title" [(visible)]="display" [style]="{width: '50vw'}">
+  <div id="outer" class="w-full flex items-stretch">
+    <div id="category" class="w-1/4" style="border: red 1px solid;">
+      <div *ngFor="let item of categories; let i = index" class="py-4 pl-4" (click)="onCategorySelect(i)">
+        {{ item.name }}
+      </div>
+    </div>
+    <div id="category-items" class="w-3/4" style="border: blue 1px solid;">
+      <div *ngFor="let catItem of categoryItems">
+        {{ catItem.label}}
+        </div>  
     </div>
   </div>
-  <div id="category-items" class="w-3/4" style="border: blue 1px solid;">
-    <div *ngFor="let catItem of categoryItems">
-      {{ catItem.label}}
-      </div>  
-  </div>
-</div>
+</p-dialog>
+
+
+<p-button (click)="showDialog()" icon="pi pi-external-link" label="CLICK TO OPEN DIALOG"></p-button>
